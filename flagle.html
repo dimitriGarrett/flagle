@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Flagle</title>
+
+        <link rel="stylesheet" href="styles2.css" id='styles'/>
+        <link rel="icon" type="image/x-icon" href="images/icon.ico"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no" />
+        <meta charset="utf-8" />
+        <meta name="description" content="Game like Wordle, where you guess a flag everyday. But, you can also play endless mode, and play forever. Country flags and US State flags are available." />
+        <meta name="robots" content="noodp" />
+        <meta name="author" content="Dimitri Garrett" />
+
+        <script src="script.js" async></script>
+    </head>
+
+    <body>
+
+        <!--This is a game where you see a flag everyday, and you have to guess what flag it is.  Infinite tries, and you can get hints like the country name length (with all of the countries with that shown, and stuff like that.-->
+
+        <div id='leftDiv' class='absoluteDiv'>
+        </div>
+
+        <div id="leftDiv2" class='absoluteDiv'>
+        </div>
+
+        <div id='rightDiv' class='absoluteDiv'>
+        </div>
+
+        <div id='rightDiv2' class='absoluteDiv'>
+        </div>
+
+        <div id='overlay'></div>
+
+        <div id='elements'>            
+            <button id='settings' onclick='javascript:settings()' >
+                ≡
+            </button>
+
+            <button id='changeBright' onclick='javascript:changeColors()'>
+                🌙
+            </button>
+
+            <div id='starHolder'>
+
+                <div class='star' id='star1'>
+
+                </div>
+                
+                <div class='star' id='star2'>
+
+                </div>
+                
+                <div class='star' id='star3'>
+
+                </div>
+                
+                <!--div class='star' id='star4'>
+
+                </div>
+                
+                <div class='star' id='star5'>
+
+                </div>-->
+
+            </div>
+
+            <button id='hard' onclick='javascript:changeDiff()'>
+                💀
+            </button>
+
+            <img src='images/icon.jpg' id='iconIMG' alt='rulesMenu'>
+
+            <button id='rulesStart' onclick='javascript:rules()'>
+
+            </button>
+
+            <h1 id="Flagle">
+                Flagle
+            </h1>
+        </div>
+
+        <button id='viewCountries' onclick='javascript:viewCountries()'> 
+            Country Menu
+        </button>
+
+        <button id='skip' onclick='javascript:skipFlag()'>
+            Skip Current Flag
+        </button>
+
+        <div id='allCountriesMenu'>
+
+        </div>
+
+        <div id='rules'>
+            Rules: <br><br> Country mode (Daily): You have 8 tries to guess the correct flag in as least tries as possible. You can view each country name by clicking on the country menu at the bottom of the screen, or the country names will show up on the sides of the flag.  After you guess, the continent to country is in will appear under the image of the flag.  The screen will flash red if your guess is in the wrong continent, yellow if its in the right contenent, and green if it is correct. If you type in hint you will get the first letter of the country.  A hint counts as a guess.  There is no daily state mode. You can only get a hint after 3 guesses. Daily mode restarts at 12 AM UCT everyday so come back every day to try and guess the flag in as least tries as possible. <br><br> Country and State Mode (Endless): You have 8 tries to guess the country or state.  If you guess correctly, it will count on your streak.  If your guess is incorrect, your streak is lost. You can view each country / state  name by clicking on the menu at the bottom of the screen (if enabled in the settings), or the country names will show up on the sides of the flag. Hints work the same way for endless, but after 1 guess you can get a hint. <br><br> If you guess on the correct continent, a blue checkmark will apppear, and if you guess correctly, there will be a green checkmark, and  incorrectly, a red X.  <br><br>Want a challenge?  Try hard mode by clicking the skeleton at the top of the screen!
+        </div>
+
+        <div id='settingsMenu'>
+            <h3>Settings</h3>
+
+            <button class='changeAuto' id = 'change4' onclick='changeModeDaily()'></button>
+            <button class='changeAuto' id = 'change5' onclick='changeModeEndless()'></button>
+
+            <button class='changeAuto' id = 'change6' onclick='normalVision()'></button>
+            <button class='changeAuto' id = 'change7' onclick='colorVision()'></button>
+
+            <button class='changeAuto' id = 'change8' onclick='screen1();'></button>
+            <button class='changeAuto' id = 'change9' onclick='screen2();'></button>
+
+            <button class='changeAuto' id = 'change10' onclick='normalSet();'></button>
+            <button class='changeAuto' id = 'change11' onclick='stateSet();'></button>
+
+            <p id='normalColor'>Normal Vision</p>
+            <p id='colorColor'>Colorblind Vision</p>
+
+            <p id='dailyName'>Daily Mode</p>
+            <p id='endlessName'>Endless Mode</p>
+
+            <p id='showText'>Hide Side Text</p>
+            <p id='hideText'>Show Side Text</p>
+
+            <p id='United'>United States Set</p>
+            <p id='Country'>Countries Set</p>
+
+            <button class='changeAuto' id = 'change1' onclick='autoMode1()'></button>
+            <button class='changeAuto' id = 'change2' onclick='autoMode2()'></button>
+            <button class='changeAuto' id = 'change3' onclick='autoMode3()'></button>
+
+            <p id='currentMode'>Auto Complete Mode: Auto Complete Off</p>
+
+            <h4 id='inspired'>(This is obviously inspired by the popular <a href="https://www.powerlanguage.co.uk/Wordle" target="_blank">Wordle</a>, check it out!)</h4>
+
+        </div>
+
+        <p id='cont'></p>
+        <!--
+This is a game about flags; you have to guess the flag in as few tries as possible, but after 7 tries in endless mode, it tells you the flag. Daily mode updates once a day, at 12:00 UTC. But, you can play endless mode forever! If you don't know a flag, you can skip it, and it tells you what it was, to help you learn. For endless mode, the main header gives information about your 'run'. It shows, in order, The name of the game, your current streak (how many flags you've guessed first try) and your maximum streak. Another thing that is useful is that after 3 tries on daily and 2 tries on endless, you can type 'hint' to see the first letter of the country!-->
+        <h3 id='lastFlag'></h3>
+
+        <img id='currentFlag' src=''>
+
+        <div id="guessArea">
+        </div>
+
+    </body>
+</html>

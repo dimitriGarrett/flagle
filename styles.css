@@ -1,0 +1,616 @@
+#Flagle
+{
+    position: absolute;
+
+    left: 0;
+    top: -7.5px;
+
+    margin: 0 auto;
+
+    width: 40%;
+
+    font-size: 35px;
+}
+
+body
+{
+    color: white;
+    
+    background-color: rgb(24, 24, 24);
+    
+    font-family: calibri, sans-serif;
+    
+    overflow: hidden;
+    
+    transition: background-color 0.4s linear;
+}
+
+input
+{
+    border: 3px solid darkred;
+    border-radius: 5px;
+    
+    background-color: red;
+    
+    color: white;
+    
+    overflow: hidden;
+}
+
+#currentFlag
+{
+    margin: 0 auto;
+    display: block;
+
+    transform: translate(0%, 8%);
+
+    max-width: 450px;
+    max-height: 300px;
+
+    margin-bottom: 25px;
+
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 15px;
+}
+
+#guessArea
+{
+    position: absolute;
+    
+    width: 100%;
+    height: auto;
+
+    top: 45%;
+    
+    text-align: center;
+    margin: 0 auto;
+
+    padding-top: 40px;
+}
+
+#elements
+{
+    position: relative;
+
+    left: 50%;
+    top: 0;
+
+    width: 43%;
+    height: 30px;
+
+    transform: translate(-50%, 20%);
+    
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+#overlay 
+{
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    
+    transform: translate(-50%, -50%);
+    
+    height: 105vh;
+    width: 105vw;
+    
+    visibility: hidden;
+    
+    background-color: rgb(125, 125, 125);
+    
+    opacity: 0.25;
+}
+
+#hard
+{
+    width: 30px;
+    height: 30px;
+    
+    position: absolute;
+    
+    right: 64px;
+    
+    padding: 0;
+    top: 0;
+    
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    
+    font-size: 20px;
+}
+
+#changeBright
+{
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+
+    right: 32px;
+    top: 0;
+    
+    border: 2px solid rgb(255, 255, 255);
+    background-size: 100%;
+    background-color: rgb(0, 0, 0);
+    
+    transition-duration: 0.7s;
+    
+    padding: 0;
+    
+    padding-bottom: 1px;
+    
+    font-size: 20px;
+}
+
+#iconIMG
+{
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    right: 96px;
+    top: 0;
+}
+
+#settings
+{
+    position: absolute;
+
+    /*transform: translate(30vw, -0.75vh);
+    */
+    right: 0px;
+    top: 0px;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: rgb(0, 0, 0);
+
+    border: 2px solid rgb(255, 255, 255);
+    
+    /*MAYBE MAKE IT SO EERYTHING SLIDES IN AT ONCE COOL EFFECT*/
+    
+      transition-duration: 0.7s;
+}
+
+#settings:hover
+{
+    background-color: rgb(131, 171, 255);
+
+    border: 2px solid rgb(75, 75, 75);
+}
+
+#viewCountries
+{
+    position: absolute;
+
+    width: 200px;
+    height: 30px;
+    
+    left: 50%;
+    bottom: 10%;
+    
+    transform: translate(-50%, 0);
+}
+
+#threeLine
+{  
+    position: relative;
+
+    left: 50%;
+
+    transform: translate(-45%, 0%);
+
+    width: 20px;
+    height: 2.5px;
+    background-color: rgb(255, 255, 255);
+    margin: 3px 0;
+}
+
+#settingsMenu
+{
+    position: absolute;
+
+    visibility: hidden;
+
+    width: 520px;
+    height: 90%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -46%);
+
+    border: 3px solid rgb(47, 53, 59);
+
+    background-color: rgb(145, 140, 121);
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    box-shadow: 1px 1px 3px;
+}
+
+#allCountriesMenu
+{
+    position: absolute;
+
+    visibility: hidden;
+
+    width: 520px;
+    height: 90%;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -46%);
+
+    border: 3px solid rgb(47, 53, 59);
+
+    background-color: rgb(145, 140, 121);
+
+    text-align: center;
+    white-space: pre-line;
+
+    overflow-y: scroll;
+
+
+    -ms-overflow-style: none;
+
+    border-radius: 25px;
+
+    font-size: 24.2px;
+    line-height: 3.0px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#allCountries::-webkit-scrollbar
+{
+    width: 0;
+    height: 0;
+}
+
+#allCountriesMenu p
+{
+    padding-top: 0px;
+
+    vertical-align: top;  
+}
+
+#settingsMenu p
+{
+    font-size: 20px;  
+
+    width: 95%;
+
+    margin: auto;
+
+    padding-top: 10px;
+}
+
+#changeMode
+{
+    width: 200px; 
+    height: auto;
+
+    margin: auto;
+}
+
+#changeColors
+{
+    width: 200px; 
+    height: auto;
+
+    margin: auto;
+}
+
+.changeAuto
+{
+    margin: auto;
+
+    border-radius: 50%;
+
+    width: 20px;
+
+    height: 20px;
+
+    background-color:  rgb(94, 106, 108);
+
+    border: 3.5px solid rgb(0, 0, 0);
+
+    transition-duration: 0.5s;
+    
+    display: inline-block;
+}
+
+#change1
+{
+    position: absolute;
+
+    padding-left: 10px;
+    padding-right: 0px;
+
+    left: 215px;
+    top: 18.75%;
+}
+
+#change2
+{
+    position: absolute;
+
+    padding-left: 10px;
+    padding-right: 0px;
+
+    left: 245px;
+    top: 18.75%;
+}
+
+#change3
+{
+    position: absolute;
+
+    padding-left: 10px;
+    padding-right: 0px;
+
+    left: 275px;
+    top: 18.75%;
+}
+
+#change4
+{
+    position: absolute;
+    
+    left: 232px;
+    top: 7.5%;
+}
+
+#change5
+{
+    position: absolute;
+    
+    left: 262px;
+    top: 7.5%;
+}
+
+#change6
+{
+    position: absolute;
+    
+    left: 232px;
+    
+    top: 13%;
+}
+
+#change7
+{
+    position: absolute;
+    
+    left: 262px;
+    
+    top: 13%;
+}
+
+#colorColor
+{
+     display: inline-block;
+    
+    position: absolute;  
+    
+    left: 56%;
+    
+    top: 9.75%;
+}
+
+#normalColor
+{
+     display: inline-block;
+    
+    position: absolute;
+    
+    left: 21%;
+    
+    top: 9.75%;
+    
+    text-align: right;
+}
+
+#currentMode
+{
+    position: absolute;
+
+    width: 100%;
+    
+    top: 19.5%;
+    left: 50%;
+
+    transform: translate(-50%, 0%);
+    
+    opacity: inherit;
+
+}
+
+#endlessName
+{
+    display: inline-block;
+    
+    position: absolute;
+    
+    top: 4.2%;
+    
+    left: 56%;
+}
+
+#inspired
+{
+    position: absolute;
+
+    bottom: -20px;
+
+    padding-bottom: 0px;
+
+    left: 50%;
+
+    transform: translate(-50%, 0);
+
+    width: 100%;
+}
+
+#guessArea input
+{
+    width: 30%;  
+    height: 23px;
+        
+    padding-bottom: 0;
+}
+
+#guessArea input::placeholder
+{
+    color: white;
+    opacity: 0.7;
+}
+
+#guessArea label
+{
+    padding-left: 5px;  
+
+    display: inline-block;
+
+    height: 100%;
+}
+
+#lastFlag
+{   
+    position: fixed;
+
+    visibility: hidden;
+    
+    color: white;
+
+    height: 10px;
+
+    top: 87.5%;
+    left: 50%;
+
+    transform: translate(-50%, 0%);
+}
+
+#skip
+{
+    position: absolute;
+    
+    left: 50%;
+    bottom: 1%;
+    
+    transform: translate(-50%, 0%);
+    
+    height: 35px;
+    width: 185px;
+    
+    display: inline-block;
+    visibility: hidden;
+    
+    border: 3px solid darkred;
+    border-radius: 5px;
+    
+    transition-duration: 0.6s;
+    background-color: red;
+    color:white;
+}
+
+#skip:enabled
+{
+    border: 3px solid darkred;
+    border-radius: 5px;
+    
+    transition-duration: 0.6s;
+    background-color: red;
+    color:white;
+}
+
+#skip:hover:not([disabled])
+{
+    background-color: darkred;
+    border: 3px solid red;
+    color:white;
+}
+
+#skip:disabled
+{
+    color:white;  
+     background-color: darkred;
+    border: 3px solid red;
+}
+
+#rightDiv2
+{    
+    width: 132px;
+    height: 100%;
+    position: absolute;
+    right: 0%;
+    padding: 0;
+    font-size: 14.2px;
+    line-height: 0.5px;
+    
+    margin: 0 0;
+    margin-right: 7.5px;
+    
+    text-align: right;
+    
+    display: inline-block;
+}
+
+#rightDiv
+{    
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    word-wrap: wrap;
+
+    right: 0;
+    
+    transform: translate(-75%, 0);
+    
+    font-size: 14.2px;
+    line-height: 0.5px;
+
+    margin: auto;
+
+    text-align: right;
+}
+/*CHANGE ALL DIV POSIIONTIONS TO REALTIVE TO WIDTH AND HEIGHT OF SCREEN*/
+div p
+{
+    opacity: inherit;  
+}
+
+#leftDiv2
+{
+    width: 145px;
+    height: 100%;
+    position: absolute;
+    word-wrap: wrap;
+    left: 0;
+    transform: translate(150%, 0%);
+    font-size: 14.2px;
+    line-height: 0.5px;
+}
+
+#leftDiv
+{
+    width: 200px;
+    padding-left: 7.5px;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    word-wrap: wrap;
+    font-size: 14.2px;
+    line-height: 0.5px;
+
+    margin: auto;
+    
+    
+}

@@ -1,0 +1,284 @@
+#Flagle
+{
+    text-align: center;  
+    
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    
+    margin: 0 auto;
+    
+    width: 40%;
+    
+    font-size: 35px;
+}
+
+body
+{
+    background-color: rgb(0, 100, 0);
+    
+    font-family: calibri, sans-serif;
+    color: yellow;
+    
+    overflow: hidden;
+}
+
+/*input
+{
+    background-color: rgba(125, 125, 125, 0.4);  
+    
+    border: 2px solid gray;
+    border-radius: 5px;
+    
+    transition-duration: 0.45s;
+}
+
+
+
+input:focus 
+{
+   border: 3px solid #555;
+    
+    background-color: lightgray;
+}*/
+input
+{ 
+    border: 3px solid brown;
+    border-radius: 5px;
+    color: yellow;
+    
+    background-color: green;
+}
+
+#imageArea
+{
+    padding-top: 50px;
+    
+    text-align: center;
+    
+    margin: 0 auto;
+    
+    width: 50%;
+    height 25%;
+}
+
+#guessArea
+{
+    width: 45%;
+    height: auto;
+    
+    text-align: center;
+    margin: 0 auto;
+    
+    padding-top: 40px;
+}
+
+#settings
+{
+    position: absolute;
+    
+    transform: translate(30vw, -0.75vh);
+    
+    width: 40px;
+    height: 40px;
+    
+    text-align: center;
+    margin: auto;
+}
+
+#threeLine
+{  
+    width: 24px;
+    height: 4px;
+    background-color: yellow;
+    margin: 5px 0px;
+}
+
+#settingsMenu
+{
+    position: absolute;
+    
+    visibility: hidden;
+    
+    width: 480px;
+    height: 90%;
+    
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -45%);
+    
+    background-color: rgb(125, 125, 125);
+    text-align: center;
+    
+    border-radius: 25px;
+}
+
+#settingsMenu p
+{
+    font-size: 25px;  
+    
+    width: 95%;
+    
+    margin: auto;
+    
+    padding-top: 10px;
+}
+
+#settingsMenu button
+{
+    width: 155px; 
+    height: auto;
+    
+    margin: auto;
+    
+    border-radius: 10px;
+}
+
+#guessArea input
+{
+    width: 65%;  
+}
+
+#guessArea label
+{
+    padding-left: 5px;  
+    
+    display: inline-block;
+    
+    height: 100%;
+}
+
+#lastFlag
+{   
+    visibility: hidden;
+    
+    position: absolute;
+    margin: auto;
+    
+    left: 50%;
+    transform: translate(-50%, 2vh);
+}
+
+#skip
+{
+    position: absolute;
+    
+    left: 50%;
+    bottom: 1%;
+    
+    transform: translate(-50%, 0%);
+    
+    height: 35px;
+    width: 185px;
+    
+    display: inline-block;
+    visibility: hidden;
+    
+    border: 3px solid darkblue;
+    border-radius: 5px;
+}
+
+#skip:enabled
+{
+    border: 3px solid brown;
+    border-radius: 5px;
+    
+    transition-duration: 0.6s;
+    background-color: green;
+    color:yellow;
+}
+
+#skip:hover:not([disabled])
+{
+    background-color: brown;
+    border: 3px solid yellow;
+    color:green;
+}
+
+#skip:disabled
+{
+    color: green;  
+     background-color: brown;
+    border: 3px solid yellow;
+}
+
+#icon
+{
+    position: absolute;
+    
+    width: 40px;
+    height: 40px;
+    
+    transform: translate(65vw, -0.575vh);
+    
+    margin: auto;
+    text-align: center;
+}
+
+#iconIMG
+{
+      width: 40px;
+      height: 40px;
+}
+
+#rightDiv2
+{    
+    width: 135px;
+    height: 98.5vh;
+    position: absolute;
+    word-wrap: wrap;
+    transform: translate(90vw, 0%);
+    font-size: 14.2px;
+    line-height: 0.5px;
+    
+    margin: auto;
+    
+    text-align: right;
+}
+
+#rightDiv
+{    
+    width: 200px;
+    height: 98.5vh;
+    position: absolute;
+    word-wrap: wrap;
+    transform: translate(75vw, 0%);
+    font-size: 14.2px;
+    line-height: 0.5px;
+    
+    margin: auto;
+    
+    text-align: right;
+}
+/*CHANGE ALL DIV POSIIONTIONS TO REALTIVE TO WIDTH AND HEIGHT OF SCREEN*/
+div img
+{
+    text-align:center;
+    margin: auto;
+}
+
+#leftDiv2
+{
+    width: 145px;
+    height: 98.5vh;
+    position: absolute;
+    word-wrap: wrap;
+    transform: translate(15vw, 0%);
+    font-size: 14.2px;
+    line-height: 0.5px;
+    
+    margin: auto;
+
+}
+
+#leftDiv
+{
+    width: 200px;
+    height: 98.5vh;
+    position: absolute;
+    word-wrap: wrap;
+    transform: translate(0vw, 0%);
+    font-size: 14.2px;
+    line-height: 0.5px;
+    
+    margin: auto;
+}
